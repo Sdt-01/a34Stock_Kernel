@@ -397,7 +397,10 @@ out_rcu_unlock:
 	goto out;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> caa37173062 (net: Remove KNOX NCM from source)
 /*
  *	The peer socket should always be NULL (or else). When we call this
  *	function we are destroying the object and from then on nobody
@@ -424,6 +427,10 @@ int inet_release(struct socket *sock)
 		if (sock_flag(sk, SOCK_LINGER) &&
 		    !(current->flags & PF_EXITING))
 			timeout = sk->sk_lingertime;
+<<<<<<< HEAD
+=======
+		sock->sk = NULL;
+>>>>>>> caa37173062 (net: Remove KNOX NCM from source)
 		sk->sk_prot->close(sk, timeout);
 		sock->sk = NULL;
 	}

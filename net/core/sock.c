@@ -622,6 +622,7 @@ out:
 
 	return ret;
 }
+<<<<<<< HEAD
 // SEC_PRODUCT_FEATURE_KNOX_SUPPORT_NPA {
 /** The function sets the domain name associated with the socket. **/
 static int sock_set_domain_name(struct sock *sk, char __user *optval,
@@ -710,6 +711,8 @@ out:
 }
 
 // SEC_PRODUCT_FEATURE_KNOX_SUPPORT_NPA }
+=======
+>>>>>>> caa37173062 (net: Remove KNOX NCM from source)
 
 static inline void sock_valbool_flag(struct sock *sk, int bit, int valbool)
 {
@@ -759,6 +762,7 @@ int sock_setsockopt(struct socket *sock, int level, int optname,
 
 	if (optname == SO_BINDTODEVICE)
 		return sock_setbindtodevice(sk, optval, optlen);
+<<<<<<< HEAD
 	// SEC_PRODUCT_FEATURE_KNOX_SUPPORT_NPA {
 	if (optname == SO_SET_DOMAIN_NAME)
 		return sock_set_domain_name(sk, optval, optlen);
@@ -767,6 +771,8 @@ int sock_setsockopt(struct socket *sock, int level, int optname,
 	if (optname == SO_SET_DNS_PID)
 		return sock_set_dns_pid(sk, optval, optlen);
 	// SEC_PRODUCT_FEATURE_KNOX_SUPPORT_NPA }
+=======
+>>>>>>> caa37173062 (net: Remove KNOX NCM from source)
 
 	if (optlen < sizeof(int))
 		return -EINVAL;
@@ -1687,6 +1693,7 @@ struct sock *sk_alloc(struct net *net, int family, gfp_t priority,
 			sock_inuse_add(net, 1);
 		}
 
+<<<<<<< HEAD
 		sock_net_set(sk, net);
 		refcount_set(&sk->sk_wmem_alloc, 1);
 
@@ -1695,6 +1702,10 @@ struct sock *sk_alloc(struct net *net, int family, gfp_t priority,
 		sock_update_classid(&sk->sk_cgrp_data);
 		sock_update_netprioidx(&sk->sk_cgrp_data);
 		sk_tx_queue_clear(sk);
+=======
+		sock_update_classid(sk);
+		sock_update_netprioidx(sk);
+>>>>>>> caa37173062 (net: Remove KNOX NCM from source)
 	}
 
 	return sk;

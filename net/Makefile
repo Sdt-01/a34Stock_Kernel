@@ -78,6 +78,7 @@ obj-$(CONFIG_VSOCKETS)	+= vmw_vsock/
 obj-$(CONFIG_MPLS)		+= mpls/
 obj-$(CONFIG_NET_NSH)		+= nsh/
 obj-$(CONFIG_HSR)		+= hsr/
+<<<<<<< HEAD
 ifneq ($(CONFIG_NET_SWITCHDEV),)
 obj-y				+= switchdev/
 endif
@@ -90,3 +91,6 @@ obj-$(CONFIG_NET_NCSI)		+= ncsi/
 obj-$(CONFIG_KNOX_NCM)		+= ncm/
 # SEC_PRODUCT_FEATURE_KNOX_SUPPORT_NPA }
 obj-$(CONFIG_XDP_SOCKETS)	+= xdp/
+=======
+obj-$(CONFIG_NET_ACTIVITY_STATS)		+= activity_stats.o
+>>>>>>> caa37173062 (net: Remove KNOX NCM from source)
